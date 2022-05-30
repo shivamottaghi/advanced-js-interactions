@@ -112,5 +112,25 @@ const addImageCollage = () =>{
         img.height = 250;
         imgArr[i].appendChild(img);
     }
+    /*return imgArr;*/
+}
+const collageEventListener = () => {
+    let aotImages = document.querySelectorAll('.collageImg')
+    let divImage = document.querySelectorAll('.image')
+    for (let i= 0 ; i < aotArr.length; i++){
+        aotImages[i].addEventListener('click', ()=>{
+            aotArr[i].clicked = ! aotArr[i].clicked;
+            changeCollage(i, aotImages[i] , divImage[i]);
+        })
+    }
+}
+const changeCollage = (i , img , parrent) => {
+    if (aotArr[i].clicked){
+        parrent.style.minHeight = 300;
+        img.height = 300;
+    }else {
+        img.height = 250;
+    }
 }
 addImageCollage();
+collageEventListener();

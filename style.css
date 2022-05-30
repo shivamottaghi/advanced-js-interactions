@@ -7,10 +7,10 @@ body{
 }
 
 .image{
-    height: 250px;
+    /*height: 250px;
     background: midnightblue;
-    /*I added:*/
-    width: 250px;
+    !*I added:*!
+    width: 250px;*/
 }
 
 .poke{

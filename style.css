@@ -34,10 +34,10 @@ body{
     height: 350px;
 }
 
-.carouselContainer{
+/*.carouselContainer{
     background: royalblue;
-    height: 500px;
-}
+    !*height: 500px;*!
+}*/
 
 .title{
     font-size: 1.5em;
@@ -82,13 +82,22 @@ body{
     background-color: #121212;
     color: white;
 }
-/*------------carousel------------*/
+/*------------carousel parallax------------*/
 .carouselContainer{
     /*I added :*/
-    /*overflow: hidden;*/
+    position: relative;
+    opacity: 0.70;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 400px;
 }
-.carouselImg {
-    width: 100%;
+@media (max-width: 568px) {
+    .carouselContainer {
+        background-attachment: scroll;
+    }
+}
+body, html {
     height: 100%;
-    object-fit: cover;
 }

@@ -9,6 +9,8 @@ body{
 .image{
     height: 250px;
     background: midnightblue;
+    /*I added:*/
+    width: 250px;
 }
 
 .poke{

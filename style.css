@@ -163,14 +163,12 @@ body, html {
 
 .modal-header {
     padding: 2px 16px;
-    background-color: #5cb85c;
+    background-color: #fb8500;
     color: white;
 }
 
-.modal-body {padding: 2px 16px;}
-
-/*.modal-footer {
+.modal-body {
     padding: 2px 16px;
-    background-color: #5cb85c;
-    color: white;
-}*/
+    align-content: center;
+    align-items: center;
+}

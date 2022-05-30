@@ -147,10 +147,14 @@ const addName = (el, i) => {
     return el
 }
 const addDescription = (el, i) => {
+    let picture = createEl('img', 'biggerPicture');
+    picture.src = aotArr[i].imgUrl;
+    picture.height = 350;
     let titan = createEl('p', 'titan');
     titan.innerHTML = `Titan : ${aotArr[i].Titan}`;
     let powers = createEl('p', 'powers');
     powers.innerHTML = `Ability : ${aotArr[i].Ability}`;
+    el.appendChild(picture);
     el.appendChild(titan);
     el.appendChild(powers);
     return el

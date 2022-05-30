@@ -77,3 +77,8 @@ body{
 .mode:hover{
     cursor: pointer;
 }
+/*-----------dark-mode------------*/
+.dark-mode{
+    background-color: #121212;
+    color: white;
+}

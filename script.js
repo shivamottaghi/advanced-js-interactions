@@ -64,7 +64,7 @@ let aotArr = [
     {
         'name': 'Zeke Yeager',
         'Titan': 'Beast',
-        'Ability': 'The Beast Titan could take on the physical characteristics of different animals that vary between its inheritors. It\'s very creepy believe me',
+        'Ability': 'The Beast Titan could take on the physical characteristics of different animals that vary between its inheritors.',
         'imgUrl': 'images/AOT/Zeke Yeager.png'
     },
     {
@@ -93,15 +93,10 @@ let aotArr = [
     }
 ];
 
-const createImgTag = (theClass) => {
-    let img = document.createElement('img');
-    img.setAttribute('class', theClass);
-    return img;
-}
 const addImageCollage = () => {
     let imgArr = document.querySelectorAll('.image');
     for (let i = 0; i < aotArr.length; i++) {
-        let img = createImgTag('collageImg');
+        let img = createEl('img','collageImg');
         img.src = aotArr[i].imgUrl;
         img.height = 250;
         imgArr[i].appendChild(img);
@@ -185,3 +180,4 @@ addImageCollage();
 addModalStructure();
 addModalContent();
 collageEventListener();
+/*--------------------pokemon hover--------------------*/

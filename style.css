@@ -148,8 +148,10 @@ body, html {
 
 /* The Close Button */
 .close {
+    position: absolute;
+    right: 10px;
     color: white;
-    float: right;
+    /*float: right;*/
     font-size: 28px;
     font-weight: bold;
 }

@@ -181,3 +181,27 @@ addModalStructure();
 addModalContent();
 collageEventListener();
 /*--------------------pokemon hover--------------------*/
+const pokeMouseOver = () => {
+    let pokeTags = document.querySelectorAll('.poke');
+    pokeTags.forEach(el=>{
+        el.addEventListener('mouseover', ()=>{
+           let tooltip = el.querySelector('img');
+            console.log(tooltip)
+           tooltip.style.visibility = 'visible';
+            tooltip.style. opacity = '1';
+        })
+    })
+}
+const pokeMouseOut = () => {
+    let pokeTags = document.querySelectorAll('.poke');
+    pokeTags.forEach(el=>{
+        el.addEventListener('mouseout', ()=>{
+            let tooltip = el.querySelector('img');
+            console.log(tooltip)
+            tooltip.style.visibility = 'hidden';
+            tooltip.style. opacity = '0';
+        })
+    })
+}
+pokeMouseOver();
+pokeMouseOut();

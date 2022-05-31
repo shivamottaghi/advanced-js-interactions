@@ -15,6 +15,7 @@ body{
 
 .poke{
     font-weight: bold;
+    position: relative;
 }
 
 .chaser{
@@ -151,7 +152,6 @@ body, html {
     position: absolute;
     right: 10px;
     color: white;
-    /*float: right;*/
     font-size: 28px;
     font-weight: bold;
 }
@@ -173,4 +173,25 @@ body, html {
     padding: 2px 16px;
     align-content: center;
     align-items: center;
+}
+/*-----------Poke tooltip--------*/
+.tooltip-box{
+    visibility: hidden;
+    width: 120px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+
+    /* Position the tooltip text */
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -60px;
+
+    /* Fade in tooltip */
+    opacity: 0;
+    transition: opacity 0.3s;
 }

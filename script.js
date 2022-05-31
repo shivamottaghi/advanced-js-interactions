@@ -205,3 +205,29 @@ const pokeMouseOut = () => {
 }
 pokeMouseOver();
 pokeMouseOut();
+/*-----------Mouse Chaser-------------*/
+let chaser = document.querySelector('.chaser');
+document.getElementById('chaser-box').addEventListener('mousemove', (e)=>{
+    let boxBounding = document.getElementById('chaser-box').getBoundingClientRect();
+    let x = e.clientX -boxBounding.left - 25;
+    let y = e.clientY - boxBounding.top - 25;
+    let chaserCheck = checkChaserCoordinates(x,y,boxBounding);
+    if (chaserCheck){
+        setChaser(x,y);
+    }
+
+    console.log(x);
+
+});
+const checkChaserCoordinates = (x,y,boxBounding) =>{
+    if (y>boxBounding.bottom - boxBounding.top - 50 || x > boxBounding.right - boxBounding.left - 50 || x<0 || y < 0){
+        return false;
+    }
+    else {
+        return true;
+    }
+}
+const setChaser = (x,y) => {
+    chaser.style.left = x + 'px';
+    chaser.style.top = y + 'px';
+}

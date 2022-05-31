@@ -18,12 +18,7 @@ body{
     position: relative;
 }
 
-.chaser{
-    width: 50px;
-    height: 50px;
-    background: red;
-    border-radius: 50%;
-}
+
 
 .runner{
     width: 50px;
@@ -32,10 +27,7 @@ body{
     border-radius: 50%;
 }
 
-.box{
-    border: 1px solid grey;
-    height: 350px;
-}
+
 
 /*.carouselContainer{
     background: royalblue;
@@ -194,4 +186,19 @@ body, html {
     /* Fade in tooltip */
     opacity: 0;
     transition: opacity 0.3s;
+}
+/*--------------chaser and runner-----------------*/
+.box{
+    border: 1px solid grey;
+    height: 350px;
+    padding: 0;
+    position: relative;
+}
+/*----------------------CHASER-----------------------*/
+.chaser{
+    width: 50px;
+    height: 50px;
+    background: red;
+    border-radius: 50%;
+    position: absolute;
 }

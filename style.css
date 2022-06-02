@@ -194,11 +194,23 @@ body, html {
     padding: 0;
     position: relative;
 }
-/*----------------------CHASER-----------------------*/
+/*-------------CHASER--------------*/
 .chaser{
     width: 50px;
     height: 50px;
     background: red;
     border-radius: 50%;
     position: absolute;
+    transition-property: top, left;
+    transition-duration: 0.1s;
+}
+/*------------RUNNER--------------*/
+.runner{
+    width: 50px;
+    height: 50px;
+    background: green;
+    border-radius: 50%;
+    position: absolute;
+    transition-property: top, left;
+    transition-duration: 0.4s;
 }

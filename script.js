@@ -209,14 +209,14 @@ pokeMouseOut();
 let chaser = document.querySelector('.chaser');
 document.getElementById('chaser-box').addEventListener('mousemove', (e)=>{
     let boxBounding = document.getElementById('chaser-box').getBoundingClientRect();
-    let x = e.clientX -boxBounding.left - 25;
+    let x = e.clientX - boxBounding.left - 25;
     let y = e.clientY - boxBounding.top - 25;
     let chaserCheck = checkChaserCoordinates(x,y,boxBounding);
     if (chaserCheck){
         setChaser(x,y);
     }
 
-    console.log(x);
+    //console.log(x);
 
 });
 const checkChaserCoordinates = (x,y,boxBounding) =>{
@@ -230,4 +230,49 @@ const checkChaserCoordinates = (x,y,boxBounding) =>{
 const setChaser = (x,y) => {
     chaser.style.left = x + 'px';
     chaser.style.top = y + 'px';
+}
+/*------------Mouse runner-------------*/
+let runner = document.querySelector('.runner');
+let runnerBox = document.querySelector('#runner-box');
+let mouseIsClose = false;
+runnerBox.addEventListener('mousemove', (e)=>{
+    let runnerRect = runner.getBoundingClientRect();
+    let boxRect = runnerBox.getBoundingClientRect();
+    let boxHeight = boxRect.bottom - boxRect.top - 25;
+    let boxWidth = boxRect.right - boxRect.left - 25;
+    let mx = e.clientX;
+    let my = e.clientY;
+    let rx = runnerRect.left + 25;
+    let ry = runnerRect.top + 25;
+    mouseIsClose = calculateDistance(mx,my,rx,ry);
+    if (mouseIsClose){
+        changeRunnerLocation(boxHeight , boxWidth /*, mx , my , rx , ry*/);
+    }
+})
+const calculateDistance = (mx,my,rx,ry) => {
+  let xDistance =Math.floor(Math.abs(mx - rx)) ;
+  let yDistance =Math.floor(Math.abs(my-ry)) ;
+  if (xDistance <= 50 && yDistance <= 50 ){
+      mouseIsClose = true;
+  }
+  else {
+      mouseIsClose = false;
+  }
+    console.log(xDistance);
+    console.log(yDistance);
+    return mouseIsClose
+}
+const changeRunnerLocation = (height , width /*, mx , my , rx , ry*/ ) => {
+    let x = Math.floor(Math.random()* width + 1);
+    let y = Math.floor(Math.random()* height + 1);
+    runner.style.left = x + 'px';
+    runner.style.top = y + 'px';
+    /*let x ;
+    let y ;
+    if (mx < rx){
+        if (my < ry){
+            x = Math.floor(Math.random()*( width - rx) + rx + 1);
+            y = Math.floor(Math.random())
+        }
+    }*/
 }

@@ -3,7 +3,7 @@
 ## Must-have features
 - [x] A parallax carousel
 - [x] A collage with popup for more details
-- [ ] Hover image above every Pokemon in the text
+- [x] Hover image above every Pokemon in the text
 - [ ] Functional chaser or runner circle
 ## Nice-to-have features
 - [ ] Chaser AND runner circle are functional
@@ -17,3 +17,7 @@
 - https://css-tricks.com/dark-modes-with-css/
 - https://www.w3schools.com/howto/howto_js_slideshow.asp
 - https://www.w3schools.com/howto/howto_css_parallax.asp
+- https://www.w3schools.com/jsref/event_onmouseout.asp
+- https://developer.mozilla.org/en-US/docs/Web/CSS/::after
+- https://developer.mozilla.org/en-US/docs/Web/API/Element/querySelector
+- https://www.w3schools.com/howto/howto_css_tooltip.asp

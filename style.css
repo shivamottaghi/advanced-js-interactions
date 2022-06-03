@@ -214,3 +214,6 @@ body, html {
     transition-property: top, left;
     transition-duration: 0.4s;
 }
+.letter{
+    transition:ease 0.2s ;
+}

@@ -287,3 +287,10 @@ const changeRunnerLocation = (height , width , mx , my , rx , ry ) => {
     }*/
 
 }
+/*----------Crazy Letters----------*/
+let letterArrays = document.querySelectorAll('.letter');
+document.getElementById('letter-box').addEventListener('mousemove', ()=>{
+    letterArrays.forEach(el => {
+        el.style.fontSize = Math.floor(Math.random()*(46-16)+16) + 'px';
+    })
+})

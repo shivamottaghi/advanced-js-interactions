@@ -246,33 +246,44 @@ runnerBox.addEventListener('mousemove', (e)=>{
     let ry = runnerRect.top + 25;
     mouseIsClose = calculateDistance(mx,my,rx,ry);
     if (mouseIsClose){
-        changeRunnerLocation(boxHeight , boxWidth /*, mx , my , rx , ry*/);
+        changeRunnerLocation(boxHeight , boxWidth , mx , my , rx , ry);
     }
 })
 const calculateDistance = (mx,my,rx,ry) => {
   let xDistance =Math.floor(Math.abs(mx - rx)) ;
   let yDistance =Math.floor(Math.abs(my-ry)) ;
-  if (xDistance <= 50 && yDistance <= 50 ){
-      mouseIsClose = true;
-  }
-  else {
-      mouseIsClose = false;
-  }
+  mouseIsClose = xDistance <= 50 && yDistance <= 50;
     console.log(xDistance);
     console.log(yDistance);
     return mouseIsClose
 }
-const changeRunnerLocation = (height , width /*, mx , my , rx , ry*/ ) => {
-    let x = Math.floor(Math.random()* width + 1);
+const changeRunnerLocation = (height , width , mx , my , rx , ry ) => {
+    /*let x = Math.floor(Math.random()* width + 1);
     let y = Math.floor(Math.random()* height + 1);
     runner.style.left = x + 'px';
-    runner.style.top = y + 'px';
-    /*let x ;
+    runner.style.top = y + 'px';*/
+    let x ;
     let y ;
-    if (mx < rx){
-        if (my < ry){
-            x = Math.floor(Math.random()*( width - rx) + rx + 1);
-            y = Math.floor(Math.random())
+    if (mx <= rx){
+        if (my <= ry){
+            x = Math.floor(Math.random()*(width - rx) + rx + 1);
+            y = Math.floor(Math.random()* (height - ry) + ry + 1);
+        } else {
+            x = Math.floor(Math.random()*(width - rx) + rx + 1);
+            y = Math.floor(Math.random() * ry + 1);
         }
-    }*/
+    } else {
+        if (my >= ry){
+            x = Math.floor(Math.random() * rx + 1);
+            y = Math.floor(Math.random() * ry + 1);
+        } else {
+            x = Math.floor(Math.random() * rx + 1);
+            y = Math.floor(Math.random()* (height - ry) + ry + 1);
+        }
+    }
+    if (y>height - 50 || x > width - 50 || x<0 || y < 0){
+        runner.style.left = x + 'px';
+        runner.style.top = y + 'px';
+    }
+
 }

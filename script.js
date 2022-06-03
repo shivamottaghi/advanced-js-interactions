@@ -258,11 +258,11 @@ const calculateDistance = (mx,my,rx,ry) => {
     return mouseIsClose
 }
 const changeRunnerLocation = (height , width , mx , my , rx , ry ) => {
-    /*let x = Math.floor(Math.random()* width + 1);
+    let x = Math.floor(Math.random()* width + 1);
     let y = Math.floor(Math.random()* height + 1);
     runner.style.left = x + 'px';
-    runner.style.top = y + 'px';*/
-    let x ;
+    runner.style.top = y + 'px';
+  /*  let x ;
     let y ;
     if (mx <= rx){
         if (my <= ry){
@@ -284,6 +284,6 @@ const changeRunnerLocation = (height , width , mx , my , rx , ry ) => {
     if (y>height - 50 || x > width - 50 || x<0 || y < 0){
         runner.style.left = x + 'px';
         runner.style.top = y + 'px';
-    }
+    }*/
 
 }
